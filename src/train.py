@@ -11,7 +11,7 @@ from tqdm import tqdm
 import numpy as np
 
 from dataset import RoadDataset
-from model import HandSegmentationModel
+from model import DeepLabv3
 from metrics import mean_IoU, pixel_accuracy
 from utils import save_images
 
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     }
 
     
-    model = HandSegmentationModel()
+    model = DeepLabv3()
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
